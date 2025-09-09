@@ -138,6 +138,8 @@ include_directories(
 # add_executable(${PROJECT_NAME}_node src/turtlebot_controller_node.cpp)
 add_executable(turtle_listener src/turtle_listener.cpp)
 target_link_libraries(turtle_listener ${catkin_LIBRARIES})
+add_executable(turtle_exercise src/turtle_exercise.cpp)
+target_link_libraries(turtle_exercise ${catkin_LIBRARIES})
 
 ## Rename C++ executable without prefix
 ## The above recommended prefix causes long target names, the following renames the

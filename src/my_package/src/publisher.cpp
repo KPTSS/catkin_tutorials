@@ -7,14 +7,14 @@ int main(int argc, char **argv)
     ros::NodeHandle nh;
 
     ros::Publisher chatter_pub = nh.advertise<std_msgs::String>("chatter", 1000);
-    ros::Rate loop_rate(10);
+    ros::Rate loop_rate(1);
 
     int count = 0;
     while (ros::ok())
     {
         std_msgs::String msg;
         std::stringstream ss;
-        ss << "hello world " << count;
+        ss << "202152978 + counting:" << count;
         msg.data = ss.str();
 
         ROS_INFO("%s", msg.data.c_str());

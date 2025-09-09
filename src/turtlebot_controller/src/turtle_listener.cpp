@@ -10,11 +10,12 @@ void turtleCallback(const turtlesim::Pose::ConstPtr& msg)
 	ROS_INFO("Turtle subscriber@[%f, %f, %f]",
 	msg->x, msg->y, msg->theta);
     	geometry_msgs::Twist my_vel;
-    	my_vel.linear.x = 1.0;    // Move forward at 1 m/s
-    	my_vel.angular.z = 1.0;   // Rotate at 1 rad/s
+    	my_vel.linear.x = 10;    // Move forward at 1 m/s
+    	my_vel.angular.z = 10;   // Rotate at 1 rad/s
     // Publish the velocity command
    	pub.publish(my_vel);
 }
+
 
 
 int main (int argc, char **argv)
@@ -41,7 +42,6 @@ int main (int argc, char **argv)
 
 	// Define the subscriber to turtle's position
 	ros::Subscriber sub = nh.subscribe("turtle1/pose", 1,turtleCallback);
-
     	// Define the publisher to control the turtle
     	pub = nh.advertise<geometry_msgs::Twist>("turtle1/cmd_vel", 1);
 
